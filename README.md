@@ -1,7 +1,10 @@
 # virtualpianokb
 Implementación de un Teclado Virtual para Piano utilizando Vision Estereo con un modelo de detección de manos y fluidsynth
 
-[<img src="https://i9.ytimg.com/vi/3c_hyyj2_U4/mq2.jpg?sqp=CKj42IsG&rs=AOn4CLAJpm3U_yma2LbiJphHHMRTAemcpA" width="50%">](https://youtu.be/3c_hyyj2_U4)
+Demo Youtube:
+
+[<img src="images/vpk-playing-stereo.JPG" width="50%">](https://youtu.be/3c_hyyj2_U4)
+
 
 
 Esto está integrado en un ambiente python 3.8 con virtual environment (venv)
