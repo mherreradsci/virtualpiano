@@ -31,7 +31,7 @@ Para la visión estéreo integré un par de cámaras "Logi HD Pro Webcam C920"
 <img src="images/StereoCam-DIY-300x225.JPG">
 
 ## Licencia
-Este proyecto está bajo la Licencia "MIT License" - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia "MIT License" - mira el archivo [LICENSE](LICENSE) para detalles
 
 ## Pendientes
 *TODO 1*: Incluir el diagrama de las cámaras
