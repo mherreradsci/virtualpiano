@@ -43,16 +43,16 @@ class HandDetector():
     # SMALL_TIP = 20
 
     # fingerTips = {THUMB_TIP, INDEX_TIP, MIDDLE_TIP, RING_TIP, SMALL_TIP}
-    __img_width = 640
-    __img_height = 480
 
     def __init__(self, staticImageMode=False, maxHands=2, detectionCon=0.5,
-                 trackCon=0.5, img_width=__img_width, img_height=__img_height):
+                 trackCon=0.5, img_width=640, img_height=480):
 
         self.mode = staticImageMode
         self.maxHands = maxHands
         self.detectionCon = detectionCon
         self.trackCon = trackCon
+        self.img_width = img_width
+        self.img_height = img_height
 
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(
@@ -134,9 +134,9 @@ class HandDetector():
                 # print('handLandmarks=id:{}'.format(id))
                 for indx_tips in self.fingerTips:
                     cx = handLandmarks.landmark[indx_tips].x * \
-                        self.__img_width
+                        self.img_width
                     cy = handLandmarks.landmark[indx_tips].y * \
-                        self.__img_height
+                        self.img_height
                     cv2.circle(img, (int(cx), int(cy)),
                                7, (255, 0, 0), cv2.FILLED)
 
@@ -152,9 +152,9 @@ class HandDetector():
                 for indx_tips in self.fingerTips:
                     tip_id = indx_tips
                     cx = handLandmarks.landmark[indx_tips].x * \
-                        self.__img_width
+                        self.img_width
                     cy = handLandmarks.landmark[indx_tips].y * \
-                        self.__img_height
+                        self.img_height
                     fingertips.append([hand_id, tip_id, cx, cy])
 
         hands = []
@@ -178,13 +178,13 @@ class HandDetector():
             for handLandmarks in self.results.multi_hand_landmarks:
                 x = handLandmarks.landmark[
                     self.mpHands.HandLandmark.INDEX_FINGER_TIP].x * \
-                    self.__img_width
+                    self.img_width
                 y = handLandmarks.landmark[
                     self.mpHands.HandLandmark.INDEX_FINGER_TIP].y * \
-                    self.__img_height
+                    self.img_height
                 z = handLandmarks.landmark[
                     self.mpHands.HandLandmark.INDEX_FINGER_TIP].z * \
-                    1  # self.__img_width
+                    1  # self.img_width
 
                 indexTips.append((x, y, z))
 
